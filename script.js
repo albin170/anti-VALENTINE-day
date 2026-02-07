@@ -1,10 +1,10 @@
-/* 💥 HEART RAIN */
+/* 💔 HEART RAIN */
 const canvas = document.getElementById("rain");
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
-let hearts = Array(120).fill().map(() => ({
+let hearts = Array(100).fill().map(() => ({
   x: Math.random()*canvas.width,
   y: Math.random()*canvas.height,
   v: Math.random()*2+1
@@ -22,45 +22,93 @@ function rain() {
 }
 rain();
 
-/* 🌪 SHAKE */
-function shake() {
-  document.body.classList.toggle("shake");
+/* RANDOM BEHAVIOR */
+if (Math.random() > 0.7) {
+  document.body.style.filter = "hue-rotate(90deg)";
 }
 
-/* 🎭 FACE SCAN */
-function faceScan() {
-  faceResult.innerText = "Scan complete: You look single 😌";
+/* BUTTON AVOIDANCE */
+document.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("mouseenter", () => {
+    btn.style.transform =
+      `translate(${(Math.random()-0.5)*120}px, ${(Math.random()-0.5)*120}px)`;
+  });
+});
+
+/* MEMORY */
+if (localStorage.getItem("visited")) {
+  setTimeout(() => alert("You came back."), 2000);
+}
+localStorage.setItem("visited", "true");
+
+/* SCAN */
+function scan() {
+  scanResult.innerText = "Status: Emotionally independent.";
 }
 
-/* 🧬 LOVE DETECTOR */
-function detectLove() {
-  loveResult.innerText = "Love detected: 0%. Peace: 100%";
-}
-
-/* 🩻 X-RAY */
-function xray() {
-  xrayResult.innerText = "Heart status: Protected by logic 🛡";
-}
-
-/* 📊 QUIZ */
-function quiz() {
-  const s = Math.floor(Math.random()*101);
-  quizResult.innerText = `Single level: ${s}%`;
-}
-
-/* 🤖 BOT */
-function bot() {
+/* CHAT */
+function respond() {
   const replies = [
-    "Ignore Valentine’s Day.",
-    "Buy snacks.",
-    "Peace is attractive.",
+    "Love is optional.",
+    "Peace is permanent.",
+    "This system does not celebrate.",
     "Capitalism detected."
   ];
-  botReply.innerText = replies[Math.floor(Math.random()*replies.length)];
+  systemReply.innerText =
+    replies[Math.floor(Math.random()*replies.length)];
 }
 
-/* 🧠 PWA */
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js");
+/* COLLAPSE SEQUENCE */
+const terminal = document.getElementById("terminal");
+const terminalText = document.getElementById("terminalText");
+
+const lines = [
+  "BOOTING REALITY ENGINE...",
+  "Detecting romantic construct...",
+  "Pattern found: Annual emotional loop.",
+  "Cause: Social pressure + marketing.",
+  "",
+  "You are not broken.",
+  "The system is.",
+  "",
+  "Choose wisely."
+];
+
+let i = 0;
+
+function startCollapse() {
+  terminal.style.display = "block";
+  typeLine();
 }
 
+function typeLine() {
+  if (i < lines.length) {
+    terminalText.innerText += lines[i] + "\n";
+    i++;
+    setTimeout(typeLine, 700);
+  }
+}
+
+function accept() {
+  terminalText.innerText += "\nLoop accepted. See you next year.";
+}
+
+function escape() {
+  terminalText.innerText +=
+    "\nLoop terminated.\nYou are free.";
+}
+
+/* REWIND */
+setTimeout(() => {
+  rewind.style.display = "flex";
+  setTimeout(() => rewind.style.display = "none", 2500);
+}, 15000);
+
+/* ONE-TIME ENDING */
+if (localStorage.getItem("ending")) {
+  document.body.innerHTML = "";
+  document.body.appendChild(finalEnding);
+  finalEnding.style.display = "flex";
+} else {
+  setTimeout(() => localStorage.setItem("ending", "seen"), 30000);
+}
