@@ -2,71 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Destroy Valentine’s Day</title>
+  <title>Valentine Reality Collapse</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <canvas id="rain"></canvas>
 
-<!-- BACKGROUND MUSIC -->
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2023/03/28/audio_1.mp3" type="audio/mpeg">
-</audio>
-
 <header>
-  <h1 class="glitch">VALENTINE SYSTEM FAILURE</h1>
-  <button onclick="shake()">🌪 RAGE MODE</button>
+  <h1 class="glitch">VALENTINE REALITY ENGINE</h1>
+  <p>This is not a celebration.</p>
+  <button onclick="startCollapse()">INITIATE COLLAPSE</button>
 </header>
 
-<!-- FACE SCAN -->
 <section class="box">
-  <h2>🎭 Face Scan</h2>
-  <button onclick="faceScan()">Scan Face</button>
-  <p id="faceResult"></p>
+  <h2>📊 Emotional Status</h2>
+  <button onclick="scan()">Scan</button>
+  <p id="scanResult"></p>
 </section>
 
-<!-- LOVE DETECTOR -->
 <section class="box dark">
-  <h2>🧬 AI Love Detector</h2>
-  <button onclick="detectLove()">Detect</button>
-  <p id="loveResult"></p>
-</section>
-
-<!-- X-RAY -->
-<section class="box">
-  <h2>🩻 X-Ray Heart Scanner</h2>
-  <button onclick="xray()">Scan Heart</button>
-  <p id="xrayResult"></p>
-</section>
-
-<!-- QUIZ -->
-<section class="box dark">
-  <h2>📊 How Single Are You?</h2>
-  <button onclick="quiz()">Check</button>
-  <p id="quizResult"></p>
-</section>
-
-<!-- CHATBOT -->
-<section class="box">
-  <h2>🤖 Anti-Valentine Bot</h2>
-  <input id="msg" placeholder="Say anything">
-  <button onclick="bot()">Send</button>
-  <p id="botReply"></p>
-</section>
-
-<!-- FUNERAL -->
-<section class="box funeral">
-  <h2>💀 Valentine Funeral</h2>
-  <p>RIP Love (Capitalism Edition)</p>
-  <p>14 Feb – Forever Gone</p>
+  <h2>🤖 System Interface</h2>
+  <input id="userInput" placeholder="Say something">
+  <button onclick="respond()">Send</button>
+  <p id="systemReply"></p>
 </section>
 
 <footer>
-  <p>Peace > Roses 🌑</p>
+  <p>Valentine has no authority here.</p>
 </footer>
+
+<!-- TERMINAL OVERLAY -->
+<div id="terminal">
+  <pre id="terminalText"></pre>
+  <div id="choices">
+    <button onclick="accept()">ACCEPT THE LOOP</button>
+    <button onclick="escape()">EXIT THE LOOP</button>
+  </div>
+</div>
+
+<!-- REWIND -->
+<div id="rewind">REWINDING REALITY...</div>
+
+<!-- FINAL ENDING -->
+<div id="finalEnding">
+  <h1>You were not supposed to return.</h1>
+  <p>The system remembers you.</p>
+</div>
+
+<!--
+If you found this:
+You already escaped once.
+Not everyone does.
+-->
 
 <script src="script.js"></script>
 </body>
