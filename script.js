@@ -1,14 +1,13 @@
 /* 💥 HEART RAIN */
 const canvas = document.getElementById("rain");
 const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
-let hearts = Array(100).fill().map(() => ({
-  x: Math.random() * canvas.width,
-  y: Math.random() * canvas.height,
-  s: Math.random() * 20 + 10,
-  v: Math.random() * 2 + 1
+let hearts = Array(120).fill().map(() => ({
+  x: Math.random()*canvas.width,
+  y: Math.random()*canvas.height,
+  v: Math.random()*2+1
 }));
 
 function rain() {
@@ -23,28 +22,45 @@ function rain() {
 }
 rain();
 
-/* 🔥 RAGE */
-let rageCount = 0;
-function rage() {
-  rageCount++;
-  document.getElementById("rage").innerText = rageCount;
+/* 🌪 SHAKE */
+function shake() {
+  document.body.classList.toggle("shake");
+}
+
+/* 🎭 FACE SCAN */
+function faceScan() {
+  faceResult.innerText = "Scan complete: You look single 😌";
+}
+
+/* 🧬 LOVE DETECTOR */
+function detectLove() {
+  loveResult.innerText = "Love detected: 0%. Peace: 100%";
+}
+
+/* 🩻 X-RAY */
+function xray() {
+  xrayResult.innerText = "Heart status: Protected by logic 🛡";
 }
 
 /* 📊 QUIZ */
 function quiz() {
-  const score = Math.floor(Math.random() * 101);
-  document.getElementById("quizResult").innerText =
-    `You are ${score}% single and ${100-score}% unbothered 😎`;
+  const s = Math.floor(Math.random()*101);
+  quizResult.innerText = `Single level: ${s}%`;
 }
 
-/* 🤖 CHATBOT */
-function chat() {
+/* 🤖 BOT */
+function bot() {
   const replies = [
-    "Love is optional. Peace is mandatory.",
-    "Valentine’s Day detected. Ignoring.",
-    "You deserve calm, not chaos.",
-    "Buy snacks. Not feelings."
+    "Ignore Valentine’s Day.",
+    "Buy snacks.",
+    "Peace is attractive.",
+    "Capitalism detected."
   ];
-  document.getElementById("botReply").innerText =
-    replies[Math.floor(Math.random()*replies.length)];
+  botReply.innerText = replies[Math.floor(Math.random()*replies.length)];
 }
+
+/* 🧠 PWA */
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+
