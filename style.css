@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: black;
+  color: #0ff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header {
+  padding: 60px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 20px crimson;
+  color: crimson;
+}
+
+.box {
+  padding: 40px;
+}
+
+.box.dark {
+  background: rgba(0, 255, 255, 0.05);
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  background: crimson;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px crimson;
+}
+
+input {
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+}
+
+.stories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.story {
+  width: 120px;
+  height: 180px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ff0055, #5500ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+footer {
+  padding: 20px;
+  opacity: 0.6;
+}
