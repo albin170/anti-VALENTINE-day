@@ -14,34 +14,39 @@ body {
 
 canvas {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   z-index: -1;
 }
 
 header {
-  padding: 60px;
+  padding: 50px;
 }
 
-h1 {
-  font-size: 3rem;
-  text-shadow: 0 0 20px crimson;
+.glitch {
   color: crimson;
+  font-size: 3rem;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px cyan; }
+  50% { text-shadow: -2px -2px magenta; }
+  100% { text-shadow: 2px -2px red; }
 }
 
 .box {
   padding: 40px;
 }
 
-.box.dark {
-  background: rgba(0, 255, 255, 0.05);
+.dark {
+  background: rgba(0,255,255,0.05);
 }
 
 button {
   padding: 12px 25px;
   margin: 10px;
+  border-radius: 25px;
   border: none;
-  border-radius: 20px;
   background: crimson;
   color: white;
   cursor: pointer;
@@ -54,24 +59,18 @@ input {
   border: none;
 }
 
-.stories {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+.funeral {
+  background: linear-gradient(black, #300);
+  color: #aaa;
 }
 
-.story {
-  width: 120px;
-  height: 180px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #ff0055, #5500ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.shake {
+  animation: shake 0.2s infinite;
 }
 
-footer {
-  padding: 20px;
-  opacity: 0.6;
+@keyframes shake {
+  0% { transform: translate(2px,2px); }
+  50% { transform: translate(-2px,-2px); }
+  100% { transform: translate(2px,-2px); }
 }
+
