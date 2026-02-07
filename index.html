@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destroy Valentine’s Day</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="rain"></canvas>
+
+<header>
+  <h1>💔 DESTROY VALENTINE’S DAY</h1>
+  <p>Neon. Rage. Freedom.</p>
+</header>
+
+<!-- RAGE COUNTER -->
+<section class="box">
+  <h2>🔥 Rage Click Counter</h2>
+  <button onclick="rage()">CLICK WHEN ANNOYED</button>
+  <p>Rage Level: <span id="rage">0</span></p>
+</section>
+
+<!-- QUIZ -->
+<section class="box dark">
+  <h2>📊 How Single Are You?</h2>
+  <button onclick="quiz()">Check Now</button>
+  <p id="quizResult"></p>
+</section>
+
+<!-- CHATBOT -->
+<section class="box">
+  <h2>🤖 Anti-Valentine Bot</h2>
+  <input id="userMsg" placeholder="Say something...">
+  <button onclick="chat()">Send</button>
+  <p id="botReply"></p>
+</section>
+
+<!-- STORIES -->
+<section class="box dark">
+  <h2>📱 Anti-Valentine Stories</h2>
+  <div class="stories">
+    <div class="story">💔 Day 1: Still single</div>
+    <div class="story">🔥 Day 2: Still peaceful</div>
+    <div class="story">😌 Day 3: Saved money</div>
+  </div>
+</section>
+
+<footer>
+  <p>Valentine’s Day officially defeated 🏆</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
